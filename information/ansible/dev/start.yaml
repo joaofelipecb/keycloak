@@ -1,0 +1,9 @@
+- name: Start Keycloak
+  hosts: localhost
+  tasks:
+  - name: Install Keycloak via Bitnami Helm Chart
+    kubernetes.core.helm:
+      name: keycloak
+      chart_ref: ../../helm/repository/bitnami/keycloak
+      release_namespace: keycloak
+      create_namespace: true
